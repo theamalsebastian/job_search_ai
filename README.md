@@ -37,10 +37,10 @@ cp .env.example .env
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](assets/screenshot_home.png)
+![Home Page](assets/Screenshot 2026-06-10 203403.png)
 
 ### Semantic Search Results
-![Search Results](assets/screenshot_search.png)
+![Search Results](assets/Screenshot 2026-06-10 203339.png)
 
 
 
