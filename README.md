@@ -40,7 +40,8 @@ cp .env.example .env
 ## 📸 Screenshots
 
 ### Home Page
-![Search Page](assets/Search.png)
+<img src="assets/Search.png" alt="App Screenshot" width="500">
+
 
 ### Semantic Search Results
 ![Job Results](assets/Jobs.png)
