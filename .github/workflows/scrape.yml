@@ -23,10 +23,16 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python -m utils.pipeline
 
-      - name: Commit updated index
+      - name: Push changes
         run: |
-          git config user.email "bot@github.com"
-          git config user.name "GitHub Actions"
-          git add data/
-          git diff --staged --quiet || git commit -m "auto: refresh job index $(date +%Y-%m-%d)"
+          git config user.name "Amal Sebastian"
+          git config user.email "theamalsebastian@example.com"
+          git add data/jobs_index/*
+          git commit -m "update job index"
           git push
+        env:
+          GIT_AUTH_TOKEN: ${{ secrets.GH_PAT }}
+
+      - name: Set remote with PAT
+        run: git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/theamalsebastian/job_search_assistant.git
+
