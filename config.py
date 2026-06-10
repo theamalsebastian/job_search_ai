@@ -34,5 +34,5 @@ TOP_K_RESULTS = 10
 MIN_SIMILARITY = 0.25
 
 # ── RAG (Phase 3) ────────────────────────────────────────────────────────────
-LLM_MODEL = "llama3-70b-8192"   # or mixtral-8x7b-32768
+LLM_MODEL = "llama-3.3-70b-versatile"
 MAX_CONTEXT_JOBS = 5           # jobs passed to LLM per query
