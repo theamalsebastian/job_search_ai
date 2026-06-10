@@ -1,38 +1,49 @@
 name: Refresh Job Index
 
 on:
+  workflow_dispatch:   # manual trigger
   schedule:
-    - cron: '0 6 * * *'   # runs 6am UTC daily
-  workflow_dispatch:       # manual trigger button in GitHub UI
+    - cron: "0 0 * * *"   # daily at midnight UTC
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
-      - name: Install deps
-        run: pip install -r requirements.txt && pip install groq
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Run pipeline
+      - name: Ensure index folder exists
+        run: mkdir -p data/jobs_index
+
+      - name: Run scraper
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python -m utils.pipeline
+          INDEX_PATH: data/jobs_index
+        run: python scraper/main.py
 
-      - name: Push changes
+      - name: Configure Git
         run: |
           git config user.name "Amal Sebastian"
           git config user.email "theamalsebastian@example.com"
-          git add C:\Users\Amal Sebastian\Downloads\claude -project1\job-search-ai
-          git commit -m "update job index"
-          git push
-        env:
-          GIT_AUTH_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Set remote with PAT
         run: git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/theamalsebastian/job_search_assistant.git
 
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain data/jobs_index)" ]; then
+            git add data/jobs_index
+            git commit -m "update job index"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
