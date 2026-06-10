@@ -40,10 +40,10 @@ cp .env.example .env
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](assets/Jobs.png)
+![Search Page](assets/Search.png)
 
 ### Semantic Search Results
-![Search Results](assets/Jobs.png)
+![Job Results](assets/Jobs.png)
 
 ---
 
