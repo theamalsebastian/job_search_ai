@@ -34,15 +34,18 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env → add ANTHROPIC_API_KEY=sk-ant-...
 
+---
+
+
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](assets/Screenshot 2026-06-10 203403.png)
+![Home Page](assets/Search.png)
 
 ### Semantic Search Results
-![Search Results](assets/Screenshot 2026-06-10 203339.png)
+![Search Results](assets/Jobs.png)
 
-
+---
 
 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
