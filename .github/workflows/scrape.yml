@@ -1,0 +1,32 @@
+name: Refresh Job Index
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # runs 6am UTC daily
+  workflow_dispatch:       # manual trigger button in GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install -r requirements.txt && pip install groq
+
+      - name: Run pipeline
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python -m utils.pipeline
+
+      - name: Commit updated index
+        run: |
+          git config user.email "bot@github.com"
+          git config user.name "GitHub Actions"
+          git add data/
+          git diff --staged --quiet || git commit -m "auto: refresh job index $(date +%Y-%m-%d)"
+          git push
