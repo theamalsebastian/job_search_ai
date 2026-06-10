@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "header": "Amal Sebastian\nKottayam, Kerala\n(cid:131) +91 7907524497 # theamalsebastian@gmail.com",
+    "contact": "\u2022 AI Assistants: Claude, Gemini",
+    "summary": "Aspiring Full Stack and AI Developer with a strong foundation in Python, web technologies, and Azure AI services.\nExperienced in building real-world applications such as a Sign Language Recognition System and an Online\nLaundry Service. Skilled in AI-driven workflows, REST APIs, and modern frontend frameworks.",
+    "experience": "Infosys Foundation \u2013 Finishing School for Employability Jul 2025\nTrainee\n\u2013 Completed 100+ hours of Microsoft AI900 & AI102 training.\n\u2013 Hands-on expertise in Azure AI services (Computer Vision, NLP, Cognitive Services).\n\u2013 Applied AI models to real-world scenarios: image recognition, text analytics, conversational AI.\nPACELAB Jul 21 2025 \u2013 Jul 24 2025\nPython Programming Intern Kochi\n\u2013 Gained foundational knowledge in Python programming through structured coursework.\n\u2013 Built projects using PyCharm and managed code with GitHub.\nForage Job Simulations 2025\n\u2013 Tata Cybersecurity Job Simulation.\n\u2013 Deloitte Australia Cyber Job Simulation.\n\u2013 Deloitte Australia Data Analyst Job Simulation.",
+    "education": "Bachelor of Technology Computer Science and Engineering",
+    "skills": "\u2022 Languages: Python, HTML/CSS, SQL, C",
+    "projects": "Sign Language Recognition System | Python, OpenCV\n\u2013 Built real-time gesture recognition using Python & OpenCV.\n\u2013 Implemented ML models to classify hand gestures into sign language symbols.\nAI-Powered Resume Analyzer | Python, Streamlit, SpaCy\n\u2013 Designed and developed a responsive AI-Powered Resume Analyzer that ranks resumes based on job descriptions.\n\u2013 Implemented features: Resume upload, Job description, Rate the resume.\nOnline Laundry Service Web Application | HTML, CSS, JavaScript\n\u2013 Designed and developed a responsive web app for laundry services.\n\u2013 Implemented features: service selection, order booking, price display."
+  },
+  "contact": {
+    "email": "theamalsebastian@gmail.com",
+    "phone": "+91 7907524497"
+  },
+  "skills_by_category": {
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "python"
+    ],
+    "data": [
+      "mongodb",
+      "sql"
+    ],
+    "ml_ai": [
+      "claude",
+      "computer vision",
+      "nlp"
+    ],
+    "ml_frameworks": [
+      "spacy"
+    ],
+    "backend": [
+      "rest"
+    ],
+    "cloud_devops": [
+      "azure",
+      "docker"
+    ],
+    "tools": [
+      "github",
+      "streamlit"
+    ]
+  },
+  "all_skills": [
+    "azure",
+    "claude",
+    "computer vision",
+    "css",
+    "docker",
+    "github",
+    "html",
+    "javascript",
+    "mongodb",
+    "nlp",
+    "python",
+    "rest",
+    "spacy",
+    "sql",
+    "streamlit"
+  ],
+  "experience_years": null,
+  "skill_count": 15,
+  "source_file": "tmp0d8oqtgc.pdf"
+}
