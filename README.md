@@ -20,25 +20,6 @@ This project is designed as a **portfolio piece** to showcase:
 
 ---
 
-## 🗂 Project Structure
-job-search-ai/
-├── scraper/                 # Indeed + LinkedIn scrapers
-│   └── indeed_scraper.py
-├── embeddings/              # FAISS index builder
-│   └── faiss_indexer.py
-├── utils/                   # Orchestration pipeline
-│   └── pipeline.py
-├── data/                    # Auto-created (ignored in git)
-│   ├── jobs_index.index
-│   ├── jobs_index.meta.json
-│   └── raw_jobs.json
-├── config.py                 # Settings + queries
-├── requirements.txt
-└── .env                      # API keys (never commit)
-
-
----
-
 ## ⚙️ Setup Instructions
 
 ```bash
