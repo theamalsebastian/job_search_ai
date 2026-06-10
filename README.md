@@ -5,7 +5,7 @@
 ![FAISS](https://img.shields.io/badge/FAISS-Indexing-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-> **Live Demo:** [https://your-deployment-link.streamlit.app](https://jobsearchaibot.streamlit.app/)  
+> **Live Demo:** [https://jobsearchaibot.streamlit.app/](https://jobsearchaibot.streamlit.app/)  
 > Try it now — recruiters can search jobs in real time!
 
 ---
@@ -52,32 +52,6 @@ pip install -r requirements.txt
 # 3. Configure API keys
 cp .env.example .env
 # Edit .env → add ANTHROPIC_API_KEY=sk-ant-...
-
-
-🔍 How It Works
-1. Scraping
-Indeed: RSS feed (/rss?q=...&sort=date) → reliable, structured.
-
-LinkedIn: Guest job cards endpoint → rate‑limited, retries built in.
-
-Deduplication by job URL across runs.
-
-2. Embedding
-Model: all-MiniLM-L6-v2 (384‑dim, ~80MB, CPU‑friendly).
-
-Each job → title | company | location | description.
-
-L2‑normalized embeddings → cosine similarity via FAISS.
-
-3. Indexing
-Persistent: data/jobs_index.index + .meta.json.
-
-Incremental: adds only new jobs (deduped).
-
-Search returns (job_dict, cosine_score) sorted by relevance.
-
-📸 Screenshots
-<img width="1919" height="964" alt="Screenshot 2026-06-10 203403" src="https://github.com/user-attachments/assets/103def64-391c-4bea-98e9-ca2d1c4785b5" />
 
 
 🤝 Contributing
