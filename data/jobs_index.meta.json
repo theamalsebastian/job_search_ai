@@ -1,0 +1,78 @@
+{
+  "model_name": "all-MiniLM-L6-v2",
+  "total": 8,
+  "jobs": [
+    {
+      "title": "ML Engineer",
+      "company": "OpenAI",
+      "location": "Remote",
+      "url": "https://openai.com/jobs/1",
+      "description": "Python PyTorch transformers LLM RAG FAISS AWS Docker",
+      "posted_date": "2026-06-01",
+      "source": "indeed"
+    },
+    {
+      "title": "Senior Python Engineer",
+      "company": "Stripe",
+      "location": "San Francisco",
+      "url": "https://stripe.com/jobs/2",
+      "description": "Python FastAPI PostgreSQL Redis Kubernetes microservices",
+      "posted_date": "2026-06-02",
+      "source": "linkedin"
+    },
+    {
+      "title": "Data Scientist",
+      "company": "Airbnb",
+      "location": "Remote",
+      "url": "https://airbnb.com/jobs/3",
+      "description": "Python pandas scikit-learn SQL Spark A/B testing",
+      "posted_date": "2026-06-03",
+      "source": "indeed"
+    },
+    {
+      "title": "MLOps Engineer",
+      "company": "Netflix",
+      "location": "Remote",
+      "url": "https://netflix.com/jobs/4",
+      "description": "Python Kubernetes Docker MLflow Airflow AWS SageMaker",
+      "posted_date": "2026-06-04",
+      "source": "linkedin"
+    },
+    {
+      "title": "AI Engineer",
+      "company": "Google",
+      "location": "New York",
+      "url": "https://google.com/jobs/5",
+      "description": "Python TensorFlow JAX LLM fine-tuning Vertex AI GCP",
+      "posted_date": "2026-06-05",
+      "source": "indeed"
+    },
+    {
+      "title": "Backend Engineer",
+      "company": "Notion",
+      "location": "Remote",
+      "url": "https://notion.com/jobs/6",
+      "description": "Python TypeScript FastAPI GraphQL PostgreSQL Redis",
+      "posted_date": "2026-06-06",
+      "source": "indeed"
+    },
+    {
+      "title": "NLP Engineer",
+      "company": "Hugging Face",
+      "location": "Remote",
+      "url": "https://huggingface.com/jobs/7",
+      "description": "Python PyTorch NLP transformers BERT fine-tuning datasets",
+      "posted_date": "2026-06-07",
+      "source": "linkedin"
+    },
+    {
+      "title": "Data Engineer",
+      "company": "Databricks",
+      "location": "Remote",
+      "url": "https://databricks.com/jobs/8",
+      "description": "Python Spark SQL Delta Lake Airflow Kafka dbt AWS",
+      "posted_date": "2026-06-08",
+      "source": "indeed"
+    }
+  ]
+}
