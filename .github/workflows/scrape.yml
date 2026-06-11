@@ -1,49 +1,32 @@
 name: Refresh Job Index
 
 on:
-  workflow_dispatch:   # manual trigger
   schedule:
-    - cron: "0 0 * * *"   # daily at midnight UTC
+    - cron: '0 6 * * *'   # runs 6am UTC daily
+  workflow_dispatch:       # manual trigger button in GitHub UI
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install deps
+        run: pip install -r requirements.txt && pip install groq
 
-      - name: Ensure index folder exists
-        run: mkdir -p data/jobs_index
-
-      - name: Run scraper
+      - name: Run pipeline
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          INDEX_PATH: data/jobs_index
-        run: python scraper/main.py
+        run: python -m utils.pipeline
 
-      - name: Configure Git
+      - name: Commit updated index
         run: |
-          git config user.name "Amal Sebastian"
-          git config user.email "theamalsebastian@example.com"
-
-      - name: Set remote with PAT
-        run: git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/theamalsebastian/job_search_assistant.git
-
-      - name: Commit and push changes
-        run: |
-          if [ -n "$(git status --porcelain data/jobs_index)" ]; then
-            git add data/jobs_index
-            git commit -m "update job index"
-            git push origin main
-          else
-            echo "No changes to commit"
-          fi
+          git config user.email "bot@github.com"
+          git config user.name "GitHub Actions"
+          git add data/
+          git diff --staged --quiet || git commit -m "auto: refresh job index $(date +%Y-%m-%d)"
+          git push
